@@ -345,7 +345,47 @@ namespace eureka_blocks {
     }
   }
 
-  //% weight=6 blockId=sonar_ping block="単体_超音波距離ｾﾝｻ" group="4_センサの値"
+  //% weight=6 blockId=sonar_ping block="超音波距離ｾﾝｻ" group="4_センサの値"
+  export function ping(pin: eureka_IO): number {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(DigitalPin.P13, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        const d = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
+        return Math.idiv(d, 58);
+      case eureka_IO.Bﾎﾟｰﾄ:
+          pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+          pins.digitalWritePin(DigitalPin.P15, 0);
+          control.waitMicros(2);
+          pins.digitalWritePin(DigitalPin.P15, 1);
+          control.waitMicros(10);
+          pins.digitalWritePin(DigitalPin.P15, 0);
+          const d = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
+          return Math.idiv(d, 58);
+      }
+    }
+
+    //% color="#f071bd" weight=5 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|" group="4_センサの値""
+  export function eureka_CdS(pin: eureka_IO): number {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P0);
+      case eureka_IO.Bﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P1);
+      case eureka_IO.Cﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P2);
+    }
+  }
+}
+
+//% color="#f5a142" block="ユーレカ車" icon="\uf1b9"
+namespace eureka_blocks_car {
+
+  //% weight=6 blockId=sonar_ping block="ﾕｰﾚｶ車距離ｾﾝｻ" group="基本のうごき"
   export function ping() {
     // send
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
@@ -361,21 +401,8 @@ namespace eureka_blocks {
     return Math.idiv(d, 58);
   }
 
-  //% color="#f071bd" weight=5 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|" group="4_センサの値""
-  export function eureka_CdS(pin: eureka_IO): number {
-    switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P0);
-      case eureka_IO.Bﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P1);
-      case eureka_IO.Cﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P2);
-    }
-  }
-}
 
-//% color="#f5a142" block="ユーレカ車" icon="\uf1b9"
-namespace eureka_blocks_car {
+
   //% blockId=servos_forward
   //% block="前に進む　出力調整　左へ |%le| 右へ" group="基本のうごき"
   //% le.min=-30 le.max=30
