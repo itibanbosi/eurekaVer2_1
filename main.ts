@@ -357,7 +357,7 @@ namespace eureka_blocks {
         pins.digitalWritePin(DigitalPin.P13, 0);
         const d = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
         return Math.idiv(d, 58);
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_tlp.Bﾎﾟｰﾄ:
           pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
           pins.digitalWritePin(DigitalPin.P15, 0);
           control.waitMicros(2);
