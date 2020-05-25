@@ -356,8 +356,8 @@ namespace eureka_blocks {
         control.waitMicros(10);
         pins.digitalWritePin(DigitalPin.P13, 0);
         // read
-        const d = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
-        return Math.idiv(d, 58);
+        const d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
+        return Math.idiv(d1, 58);
       case eureka_tlp.Bﾎﾟｰﾄ:
           pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
           pins.digitalWritePin(DigitalPin.P15, 0);
@@ -366,8 +366,8 @@ namespace eureka_blocks {
           control.waitMicros(10);
           pins.digitalWritePin(DigitalPin.P15, 0);
           // read
-          const d = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
-          return Math.idiv(d, 58);
+          const d2 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
+          return Math.idiv(d2, 58);
       }
     }
 
