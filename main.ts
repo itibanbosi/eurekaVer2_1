@@ -345,7 +345,7 @@ namespace eureka_blocks {
     }
   }
 
-  //% weight=6 blockId=sonar_ping block="超音波距離ｾﾝｻ" group="4_センサの値"
+  //% weight=6 blockId=sonar_ping block="超音波距離ｾﾝｻ　|%pin|" group="4_センサの値"
   export function ping(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
