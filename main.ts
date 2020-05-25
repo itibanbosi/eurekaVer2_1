@@ -65,7 +65,7 @@ namespace eureka_blocks {
     */
 
   //% weight=10 blockId="Temperature_number"
-  //% block="温度センサDS |%p|"
+  //% block="温度ｾﾝｻDS |%p|"
   //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
   //% group="4_センサの値"
   export function TemperatureNumber(p: eureka_IO): number {
@@ -153,7 +153,7 @@ namespace eureka_blocks {
         break;
     }
   }
-  //% color="#006B8F"  weight=26 blockId=eureka_denkitemp block="光センサ値 |%pin|" group="2_電気の利用ユニット"
+  //% color="#006B8F"  weight=26 blockId=eureka_denkitemp block="光ｾﾝｻ |%pin|" group="2_電気の利用ユニット"
   export function eureka_denkitemp(pin: eureka_denki): number {
     switch (pin) {
       case eureka_denki.Aﾎﾟｰﾄ:
@@ -184,7 +184,7 @@ namespace eureka_blocks {
     }
   }
 
-  //% color="#009A00"  weight=24 blockId=eureka_denkihuman block="人感センサ値 |%pin|" group="2_電気の利用ユニット"
+  //% color="#009A00"  weight=24 blockId=eureka_denkihuman block="人感ｾﾝｻ |%pin|" group="2_電気の利用ユニット"
   export function eureka_denkihuman(pin: eureka_denki): number {
     switch (pin) {
       case eureka_denki.Aﾎﾟｰﾄ:
@@ -214,12 +214,12 @@ namespace eureka_blocks {
     }
   }
 
-  //% color="#ff3d03" weight=19 blockId=eureka_buz_set block="ユーレカIOで音をならす" group="3_ユーレカ装置"
+  //% color="#ff3d03" weight=19 blockId=eureka_buz_set block="ﾕｰﾚｶIOで音をならす" group="3_ユーレカ装置"
   export function eureka_buz_set() {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
-  //% color="#6041f1"  weight=23 blockId=eureka_L9110 block="モーターＬ |%mode| |%pin|" group="3_ユーレカ装置"
+  //% color="#6041f1"  weight=23 blockId=eureka_L9110 block="ﾓｰﾀｰL |%mode| |%pin|" group="3_ユーレカ装置"
   //% mode.min=-100 mode.max=100
   export function L9110driver(port: eureka_denki, mode: number) {
     switch (port) {
@@ -253,7 +253,7 @@ namespace eureka_blocks {
     }
   }
 
-  //% color="#525252" weight=18 blockId=eureka_relay block="単体_リレー |%mode||%pin|" group="3_ユーレカ装置"
+  //% color="#525252" weight=18 blockId=eureka_relay block="単体_ﾘﾚｰ |%mode||%pin|" group="3_ユーレカ装置"
   //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
   export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
