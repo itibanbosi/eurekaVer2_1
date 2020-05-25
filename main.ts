@@ -346,9 +346,9 @@ namespace eureka_blocks {
   }
 
   //% weight=6 blockId=sonar_ping block="超音波距離ｾﾝｻ　|%pin|" group="4_センサの値"
-  export function ping(pin: eureka_IO): number {
+  export function ping(pin: eureka_tlp): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_tlp.Aﾎﾟｰﾄ:
         pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P13, 0);
         control.waitMicros(2);
