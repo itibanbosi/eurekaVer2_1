@@ -253,7 +253,7 @@ namespace eureka_blocks {
     }
   }
 
-  //% color="#525252" weight=18 blockId=eureka_relay block="単体_ﾘﾚｰ |%mode||%pin|" group="3_ユーレカ装置"
+  //% color="#525252" weight=18 blockId=eureka_relay block="単体_ﾘﾚｰ |%mode| |%pin|" group="3_ユーレカ装置"
   //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=10
   export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
@@ -277,7 +277,7 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#40a6ff" weight=17 blockId=eureka_white block="単体_LED |%mode||%pin|" group="3_ユーレカ装置"
+  //% color="#40a6ff" weight=17 blockId=eureka_white block="単体_LED |%mode| |%pin|" group="3_ユーレカ装置"
   export function eureka_white(port: eureka_IO, mode: onoff) {
     switch (port) {
       case eureka_IO.Aﾎﾟｰﾄ:
