@@ -349,7 +349,7 @@ namespace eureka_blocks {
   export function ping(pin: eureka_tlp): number {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
-        pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P13, 0);
         control.waitMicros(2);
         pins.digitalWritePin(DigitalPin.P13, 1);
