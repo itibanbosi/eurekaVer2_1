@@ -35,7 +35,7 @@ enum L9110moter {
 }
 
 
-//% color="#74ad1d" block="ユーレカIO"
+//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ_2.1"
 namespace eureka_blocks {
   //% shim=DS18B20::Temperature
   //% group="4_センサの値"
@@ -254,7 +254,8 @@ namespace eureka_blocks {
   }
 
   //% color="#525252" weight=18 blockId=eureka_relay block="単体_リレー |%mode||%pin|" group="3_ユーレカ装置"
-  export function eureka_relay(pin: eureka_IO, mode: onoff) {
+  //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+  export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
         if (mode == onoff.ON) {
