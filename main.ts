@@ -384,7 +384,7 @@ namespace eureka_blocks {
   }
 }
 
-//% color="#f5a142" block="ユーレカ車" icon="\uf1b9"
+//% color="#f5a142" block="ﾕｰﾚｶ車" icon="\uf1b9"
 namespace eureka_blocks_car {
 
   //% weight=6 blockId=sonar_ping block="ﾕｰﾚｶ車距離ｾﾝｻ" group="基本のうごき"
