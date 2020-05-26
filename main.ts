@@ -316,7 +316,7 @@ namespace eureka_blocks {
   //% color="#006B8F"  weight=27 block="光ｾﾝｻ値が |%limit| より暗い |%pin|" group="4_センサの値"
   //% limit.min=0 limit.max=100
   export function tantai_Light(limit: number, pin: eureka_IO): boolean {
-    switch (tlp) {
+    switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
         if ((pins.analogReadPin(AnalogPin.P0) / 1023) * 100 < limit) {
           return true;
