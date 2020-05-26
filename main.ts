@@ -196,7 +196,7 @@ namespace eureka_blocks {
     }
   }
 
-  //% color="#f5a142"  weight=23 blockId=eureka_denkiwhite block="ＬＥＤ |%mode| |%pin|" group="2_電気の利用ユニット"
+  //% color="#f5a142"  weight=23 blockId=eureka_denkiwhite block="LED |%mode| |%pin|" group="2_電気の利用ユニット"
   export function eureka_denkiwhite(mode: onoff, port: eureka_denki ) {
     switch (port) {
       case eureka_denki.Aﾎﾟｰﾄ:
