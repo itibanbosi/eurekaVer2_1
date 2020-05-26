@@ -313,6 +313,62 @@ namespace eureka_blocks {
     }
   }
 
+  //% color="#006B8F"  weight=27 block="光ｾﾝｻ値が |%limit| より暗い |%tlp|" group="4_センサの値"
+  //% limit.min=0 limit.max=100
+  export function decideLight(limit: number, tlp: eureka_tlp): boolean {
+    switch (tlp) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        if ((pins.analogReadPin(AnalogPin.P0) / 1023) * 100 < limit) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+      case eureka_IO.Bﾎﾟｰﾄ:
+        if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < limit) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+      case eureka_IO.Cﾎﾟｰﾄ:
+        if ((pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < limit) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+    }
+  }
+
+  //% color="#009A00" weight=25 block="人が動いたら |%pin|" group="4_センサの値"
+  export function humanDetection(pin: eureka_p1416): boolean {
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+    pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        if (pins.digitalReadPin(DigitalPin.P0) == 1) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+      case eureka_IO.Bﾎﾟｰﾄ:
+        if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+      case eureka_IO.Cﾎﾟｰﾄ:
+        if (pins.digitalReadPin(DigitalPin.P2) == 1) {
+          return true;
+        } else {
+          return false;
+        }
+        break;
+    }
+  }
   //% color="#858585" weight=8 blockId=eureka_human block="単体_人感ｾﾝｻ |%pin|" group="4_センサの値"
   export function eureka_human(pin: eureka_IO): number {
     switch (pin) {
