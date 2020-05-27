@@ -305,11 +305,11 @@ namespace eureka_blocks {
   export function tantai_light(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P0);
+        return pins.analogReadPin(AnalogPin.P0 / 1023);
       case eureka_IO.Bﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P1);
+        return pins.analogReadPin(AnalogPin.P1 / 1023);
       case eureka_IO.Cﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P2);
+        return pins.analogReadPin(AnalogPin.P2 / 1023);
     }
   }
 
