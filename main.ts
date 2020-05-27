@@ -348,6 +348,7 @@ namespace eureka_blocks {
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
+        pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P0) == 1) {
           return true;
         } else {
@@ -355,6 +356,7 @@ namespace eureka_blocks {
         }
         break;
       case eureka_IO.Bﾎﾟｰﾄ:
+        pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P1) == 1) {
           return true;
         } else {
@@ -362,6 +364,7 @@ namespace eureka_blocks {
         }
         break;
       case eureka_IO.Cﾎﾟｰﾄ:
+        pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
           return true;
         } else {
