@@ -35,7 +35,7 @@ enum L9110moter {
 }
 
 
-//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.13"
+//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.2"
 namespace eureka_blocks {
   //% shim=DS18B20::Temperature
   //% group="4_センサの値"
@@ -280,7 +280,7 @@ namespace eureka_blocks {
   }
   //% color="#525252" weight=18 blockId=eureka_relay_2 block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%limit| |%syuturyoku|" group="3_ユーレカ装置"
   //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=10
-  //% syuturyoku.min=-100 syuturyoku.max=1023
+  //% syuturyoku.min=0 syuturyoku.max=1023
   export function eureka_relay_2(syuturyoku: number, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:{
