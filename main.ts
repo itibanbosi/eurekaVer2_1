@@ -284,13 +284,13 @@ namespace eureka_blocks {
   export function eureka_relay_2(second: number, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P0, second);
+        pins.analogWritePin(AnalogPin.P0, second);
       }
       case eureka_IO.Bﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P1, second);
+        pins.analogWritePin(AnalogPin.P1, second);
       }
       case eureka_IO.Cﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P2, second);
+        pins.analogWritePin(AnalogPin.P2, second);
       }
 
     }
