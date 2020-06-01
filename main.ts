@@ -281,16 +281,16 @@ namespace eureka_blocks {
   //% color="#525252" weight=18 blockId=eureka_relay block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%second| |%pin|" group="3_ユーレカ装置"
   //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=10
   //% second.min=-100 mode.max=100
-  export function eureka_relay_2(mode: number, pin: eureka_IO) {
+  export function eureka_relay_2(second: number, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P0, number);
+        pins.analogWritePin(AnaloglPin.P0, second);
       }
       case eureka_IO.Bﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P1, number);
+        pins.analogWritePin(AnaloglPin.P1, second);
       }
       case eureka_IO.Cﾎﾟｰﾄ:{
-        pins.analogWritePin(AnaloglPin.P2, number);
+        pins.analogWritePin(AnaloglPin.P2, second);
       }
 
     }
