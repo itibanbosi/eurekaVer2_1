@@ -130,7 +130,7 @@ namespace eureka_blocks {
   }
 
   //% color="#1E90FF" weight=51 block="待ち時間（秒）|%second|" group="1_信号機ユニット"
-  //% second.min=0 mode.max=60
+  //% second.min=0 second.max=60
   export function driveForwards(second: number): void {
     basic.pause(second * 1000);
   }
@@ -278,19 +278,19 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#525252" weight=18 blockId=eureka_relay block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%second| |%pin|" group="3_ユーレカ装置"
+  //% color="#525252" weight=18 blockId=eureka_relay block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%limit| |%syuturyoku|" group="3_ユーレカ装置"
   //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=10
-  //% second.min=-100 mode.max=100
-  export function eureka_relay_2(second: number, pin: eureka_IO) {
+  //% syuturyoku.min=-100 syuturyoku.max=1023
+  export function eureka_relay_2(syuturyoku: number, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:{
-        pins.analogWritePin(AnalogPin.P0, second);
+        pins.analogWritePin(AnalogPin.P0, syuturyoku);
       }
       case eureka_IO.Bﾎﾟｰﾄ:{
-        pins.analogWritePin(AnalogPin.P1, second);
+        pins.analogWritePin(AnalogPin.P1, syuturyoku);
       }
       case eureka_IO.Cﾎﾟｰﾄ:{
-        pins.analogWritePin(AnalogPin.P2, second);
+        pins.analogWritePin(AnalogPin.P2, syuturyoku);
       }
 
     }
